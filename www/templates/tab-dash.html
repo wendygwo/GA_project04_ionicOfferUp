@@ -3,9 +3,10 @@
   <ion-content >
 
     <ion-list>
-      <ion-item ng-repeat="good in goods track by $index" href="#/tab/dash/{{good.id}}">
-      <p>{{good.name}}</p>
-      <p>Owned by: {{good.user_first}} {{good.user_last}}</p>
+      <ion-item class='item item-thumbnail-left item-remove-animate item-icon-right' ng-repeat="good in goods track by $index" type="item-text-wrap" href="#/tab/dash/{{good.id}}">
+        <img src='{{good.photo}}'>
+        <h2>{{good.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
 

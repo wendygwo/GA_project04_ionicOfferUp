@@ -1,0 +1,12 @@
+
+<ion-view view-title="Good Details">
+  <ion-content class="padding" ng-repeat="good in goods track by $index">
+<!--   	<div class="card"> -->
+ 			<ion-item class='item item-thumbnail-left item-remove-animate' ng-repeat="good in goods track by $index" type="item-text-wrap">
+				<img src='{{good.photo}}'>
+				<h2>{{good.name}}</h2>
+				<h3>{{good.description}}</h3>
+			</ion-item>
+		<!-- </div> -->
+	</ion-content>
+</ion-view>

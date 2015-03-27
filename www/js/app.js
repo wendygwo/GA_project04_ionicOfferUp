@@ -87,9 +87,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+  .state('tab.account-detail', {
+    url: '/account/:friendId',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/tab-account-detail.html',
+        controller: 'AccountDetailCtrl'
+      }
+    }
+  })
+  ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  // This is also the line that tells you which view to go to by default, when the app is first opened
+  $urlRouterProvider.otherwise('/tab/account');
 
 });

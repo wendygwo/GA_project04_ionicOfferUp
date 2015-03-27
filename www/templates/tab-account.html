@@ -1,9 +1,11 @@
 <ion-view view-title="Account">
   <ion-content>
     <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
+    	<ion-item class='item item-avatar item-remove-animate item-icon-right' ng-repeat="friend in friends track by $index" type="item-text-wrap" href="#/tab/account/{{friend.id}}">
+        <img src='{{friend.photo}}'>
+        <h2>{{friend.first_name}} {{friend.last_name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>
