@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 //Chats = search tab
 //Account = friends tab
 
-.controller('DashCtrl', function($scope, $http) {
+.controller('GoodsCtrl', function($scope, $http) {
 	$http
 				.get('http://anteater.offerup.c66.me/users/1.json', {cache:true})
 				   .then(function(response){
@@ -12,11 +12,11 @@ angular.module('starter.controllers', [])
 				   	// console.log($scope.goods);
 				   });
 })
-.controller('DashDetailCtrl', function($scope, $http, $stateParams) {
+.controller('GoodDetailCtrl', function($scope, $http, $stateParams) {
 	$http
 				.get('http://anteater.offerup.c66.me/goods/' + $stateParams.goodId +'.json', {cache:true})
 				   .then(function(response){
-				   	// $scope.good = response.data; 
+				   	$scope.good = response.data; 
 				   	 
 				   });
 })
@@ -38,21 +38,20 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountDetailCtrl', function($scope, $http, $stateParams) {
-	$http
-				.get('http://anteater.offerup.c66.me/users/' + $stateParams.friendId +'.json', {cache:true})
-				   .then(function(response){
-				   	$scope.goods = response.data.goods; 
-				   });
-
-		// $scope.message = 'hello';
-		// console.log('Went into dash dash dash controller');
-})
-.controller('AccountCtrl', function($scope, $http) {
+.controller('FriendsCtrl', function($scope, $http) {
 	$http
 				.get('http://anteater.offerup.c66.me/users/1.json', {cache:true})
 				   .then(function(response){
 				   	$scope.friends = response.data.friends; 
 				   	// console.log($scope.friends);
 				   });
-});
+})
+
+.controller('FriendDetailCtrl', function($scope, $http, $stateParams) {
+	$http
+				.get('http://anteater.offerup.c66.me/users/' + $stateParams.friendId +'.json', {cache:true})
+				   .then(function(response){
+				   	$scope.goods = response.data.goods; 
+				   });
+})
+;

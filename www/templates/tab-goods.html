@@ -1,9 +1,9 @@
 
-<ion-view view-title="Dashboard">
+<ion-view view-title="Goods">
   <ion-content >
 
     <ion-list>
-      <ion-item class='item item-thumbnail-left item-remove-animate item-icon-right' ng-repeat="good in goods track by $index" type="item-text-wrap" href="#/tab/dash/{{good.id}}">
+      <ion-item class='item item-thumbnail-left item-remove-animate item-icon-right' ng-repeat="good in goods track by $index" type="item-text-wrap" href="#/tab/goods/{{good.id}}">
         <img src='{{good.photo}}'>
         <h2>{{good.name}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i>

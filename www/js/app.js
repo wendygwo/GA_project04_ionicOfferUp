@@ -38,22 +38,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.goods', {
+    url: '/goods',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-goods': {
+        templateUrl: 'templates/tab-goods.html',
+        controller: 'GoodsCtrl'
       }
     }
   })
 
-  .state('tab.dash-detail', {
-    url: '/dash/:goodId',
+  .state('tab.good-detail', {
+    url: '/goods/:goodId',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash-detail.html',
-        controller: 'DashDetailCtrl'
+      'tab-goods': {
+        templateUrl: 'templates/tab-good-detail.html',
+        controller: 'GoodDetailCtrl'
       }
     }
   })
@@ -79,21 +79,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.friends', {
+    url: '/friends',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-friends': {
+        templateUrl: 'templates/tab-friends.html',
+        controller: 'FriendsCtrl'
       }
     }
   })
-  .state('tab.account-detail', {
-    url: '/account/:friendId',
+  .state('tab.friend-detail', {
+    url: '/friends/:friendId',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account-detail.html',
-        controller: 'AccountDetailCtrl'
+      'tab-friends': {
+        templateUrl: 'templates/tab-friend-detail.html',
+        controller: 'FriendDetailCtrl'
       }
     }
   })
@@ -101,6 +101,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // if none of the above states are matched, use this as the fallback
   // This is also the line that tells you which view to go to by default, when the app is first opened
-  $urlRouterProvider.otherwise('/tab/account');
+  $urlRouterProvider.otherwise('/tab/friends');
 
 });

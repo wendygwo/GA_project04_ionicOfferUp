@@ -1,7 +1,7 @@
-<ion-view view-title="Account">
+<ion-view view-title="Friends">
   <ion-content>
     <ion-list>
-    	<ion-item class='item item-avatar item-remove-animate item-icon-right' ng-repeat="friend in friends track by $index" type="item-text-wrap" href="#/tab/account/{{friend.id}}">
+    	<ion-item class='item item-avatar item-remove-animate item-icon-right' ng-repeat="friend in friends track by $index" type="item-text-wrap" href="#/tab/friends/{{friend.id}}">
         <img src='{{friend.photo}}'>
         <h2>{{friend.first_name}} {{friend.last_name}}</h2>
         <i class="icon ion-chevron-right icon-accessory"></i>
