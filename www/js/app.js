@@ -97,6 +97,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  .state('tab.friend-detail-good', {
+    url: '/friends/:friendId/:goodId',
+    views: {
+      'tab-friends': {
+        templateUrl: 'templates/tab-friend-detail-good.html',
+        controller: 'FriendDetailGoodCtrl'
+      }
+    }
+  })
   ;
 
   // if none of the above states are matched, use this as the fallback
