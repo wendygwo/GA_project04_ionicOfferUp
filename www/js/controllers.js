@@ -72,4 +72,15 @@ angular.module('starter.controllers', [])
 				   	}
 				   });
 })
+.controller('FriendDetailGoodCtrl', function($scope, $http, $stateParams) {
+	$http
+				.get('http://anteater.offerup.c66.me/goods/' + $stateParams.goodId +'.json', {cache:true})
+				   .then(function(response){
+				   	$scope.good = response.data; 
+				   	if ($scope.good.photo =='/photos/original/missing.png'){
+				   		$scope.good.photo = 'img/black-drill-sihouette.png';
+				   	}
+				   });
+})
+
 ;

@@ -2,10 +2,11 @@
 <ion-view view-title="Friend's Offers">
   <ion-content class="padding" ng-repeat="good in goods track by $index">
 <!--   	<div class="card"> -->
- 			<ion-item class='item item-thumbnail-left item-remove-animate' ng-repeat="good in goods track by $index" type="item-text-wrap">
+ 			<ion-item class='item item-thumbnail-left item-remove-animate item-icon-right' ng-repeat="good in goods track by $index" type="item-text-wrap" href="#/tab/friends/:friendId/{{good.id}}">
 				<img src='{{good.photo}}'>
 				<h2>{{good.name}}</h2>
 				<h3>{{good.description}}</h3>
+				       <i class="icon ion-chevron-right icon-accessory"></i>
 			</ion-item>
 		<!-- </div> -->
 	</ion-content>
