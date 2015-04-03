@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic'])
 
 .controller('GoodsCtrl', function($scope, $http) {
 	$http
@@ -38,6 +38,28 @@ angular.module('starter.controllers', [])
 				   	}
 				   	// console.log($scope.friends);
 				   });
+
+})
+.controller('RefreshCtrl', function($scope, $http) {
+	$scope.doRefresh = function() {
+		console.log('Went into refresh');
+    $http
+				.get('http://anteater.offerup.c66.me/users/1.json')
+				   .success(function(newFriends) {
+				   	$scope.friends = newFriends.friends; 
+				   	console.log($scope.friends);
+				   	for (var i=0; i<$scope.friends.length; i++){
+				   		if ($scope.friends[i].photo=='/photos/original/missing.png'){
+				   			$scope.friends[i].photo='img/mysteryperson.jpg';
+				   		}
+				   	} //End for loop
+				   	// console.log($scope.friends);
+				   })
+	     .finally(function() {
+	       // Stop the ion-refresher from spinning
+	       $scope.$broadcast('scroll.refreshComplete');
+	     });
+  };
 })
 
 .controller('FriendDetailCtrl', function($scope, $http, $stateParams) {
